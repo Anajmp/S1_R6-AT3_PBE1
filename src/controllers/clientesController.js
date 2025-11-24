@@ -21,7 +21,7 @@ const clientesController = {
 
     buscarClientePorID: async (req, res) => {
         try {
-            const id = Number(req.params.id_cliente);
+            const id = Number(req.params.idCliente);
             if (!id || !Number.isInteger(id)) {
                 return res.status(400).json({ message: 'ID inválido' });
             }
@@ -76,7 +76,7 @@ const clientesController = {
 
     atualizarCliente: async (req, res) => {
         try {
-            const id = Number(req.params.id_cliente);
+            const id = Number(req.params.idCliente);
             const { nome_completo, cpf, telefone, email, endereco_completo } = req.body;
 
             if (!id || !Number.isInteger(id)) {
@@ -115,7 +115,7 @@ const clientesController = {
 
     deleteCliente: async (req, res) => {
         try {
-            const id = Number(req.params.id_cliente);
+            const id = Number(req.params.idCliente);
 
             if (!id || !Number.isInteger(id)) {
                 return res.status(400).json({ message: 'ID inválido' });
