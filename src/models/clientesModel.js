@@ -23,21 +23,14 @@ const clientesModel = {
     },
 
     inserirCliente: async (pnome, pcpf, ptelefone, pemail, pendereco) => {
-        const sql = `
-            INSERT INTO clientes (nome_completo, cpf, telefone, email, endereco_completo)
-            VALUES (?, ?, ?, ?, ?);
-        `;
+        const sql = ` INSERT INTO clientes (nome_completo, cpf, telefone, email, endereco_completo) VALUES (?, ?, ?, ?, ?);`;
         const values = [pnome, pcpf, ptelefone, pemail, pendereco];
         const [rows] = await pool.query(sql, values);
         return rows;
     },
 
     alterarCliente: async (pid, pnome, pcpf, ptelefone, pemail, pendereco) => {
-        const sql = `
-            UPDATE clientes 
-            SET nome_completo=?, cpf=?, telefone=?, email=?, endereco_completo=?
-            WHERE id_cliente=?;
-        `;
+        const sql = `UPDATE clientes SET nome_completo=?, cpf=?, telefone=?, email=?, endereco_completo=? WHERE id_cliente=?;`;
         const values = [pnome, pcpf, ptelefone, pemail, pendereco, pid];
         const [rows] = await pool.query(sql, values);
         return rows;

@@ -6,15 +6,7 @@ const pedidosController = {
 
     criarPedido: async (req, res) => {
         try {
-            const {
-                id_cliente_fk,
-                data_pedido,
-                tipo_entrega,
-                distancia_km,
-                peso_kg,
-                valor_base_km,
-                valor_base_kg
-            } = req.body;
+            const { id_cliente_fk, data_pedido, tipo_entrega, distancia_km, peso_kg, valor_base_km, valor_base_kg} = req.body;
 
             // valida cliente
             const clienteExiste = await clientesModel.selecionarPorId(id_cliente_fk);
@@ -44,9 +36,7 @@ const pedidosController = {
             // desconto (> 500)
             let desconto = 0;
             if (valor_final > 500) {
-                desconto = valor_final * 0.1;
-                valor_final -= desconto;
-            }
+                desconto = valor_final * 0.1; valor_final -= desconto;}
 
             // taxa extra (> 50kg)
             let taxa_extra = 0;
@@ -59,41 +49,19 @@ const pedidosController = {
             const status_entrega = 'calculado';
 
             // ---- GRAVA O PEDIDO ----
-            const pedidoCriado = await pedidosModel.inserirPedido(
-                id_cliente_fk,
-                data_pedido,
-                tipo_entrega,
-                distancia_km,
-                peso_kg,
-                valor_base_km,
-                valor_base_kg
+            const pedidoCriado = await pedidosModel.inserirPedido( id_cliente_fk, data_pedido, tipo_entrega, distancia_km, peso_kg, valor_base_km, valor_base_kg
             );
 
             const idPedido = pedidoCriado.insertId;
 
             // ---- GRAVA A ENTREGA ----
-            await entregasModel.inserirEntrega(
-                idPedido,
-                valor_distancia,
-                valor_peso,
-                acrescimo,
-                desconto,
-                taxa_extra,
-                valor_final,
-                status_entrega
-            );
+            await entregasModel.inserirEntrega(idPedido, valor_distancia, valor_peso, acrescimo, desconto, taxa_extra, valor_final, status_entrega
+        );
 
             res.status(201).json({
                 message: 'Pedido criado e cálculo registrado com sucesso!',
                 id_pedido: idPedido,
-                calculo: {
-                    valor_distancia,
-                    valor_peso,
-                    acrescimo,
-                    desconto,
-                    taxa_extra,
-                    valor_final,
-                    status_entrega
+                calculo: {valor_distancia, valor_peso, acrescimo, desconto, taxa_extra, valor_final, status_entrega
                 }
             });
 
