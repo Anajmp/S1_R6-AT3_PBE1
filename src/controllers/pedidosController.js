@@ -18,8 +18,6 @@ const pedidosController = {
             if (!['normal', 'urgente'].includes(tipo_entrega)) {
                 return res.status(400).json({ message: 'Tipo de entrega inválido.' });
             }
-
-            // CALCULOS 
             const valor_distancia = distancia_km * valor_base_km;
             const valor_peso = peso_kg * valor_base_kg;
 
@@ -33,7 +31,7 @@ const pedidosController = {
 
             let valor_final = valor_base + acrescimo;
 
-            // desconto (> 500)
+            // desconto 
             let desconto = 0;
             if (valor_final > 500) {
                 desconto = valor_final * 0.1; valor_final -= desconto;}
@@ -47,8 +45,6 @@ const pedidosController = {
 
             // status inicial
             const status_entrega = 'calculado';
-
-            // ---- GRAVA O PEDIDO ----
             const pedidoCriado = await pedidosModel.inserirPedido( id_cliente_fk, data_pedido, tipo_entrega, distancia_km, peso_kg, valor_base_km, valor_base_kg
             );
 
@@ -58,12 +54,7 @@ const pedidosController = {
             await entregasModel.inserirEntrega(idPedido, valor_distancia, valor_peso, acrescimo, desconto, taxa_extra, valor_final, status_entrega
         );
 
-            res.status(201).json({
-                message: 'Pedido criado e cálculo registrado com sucesso!',
-                id_pedido: idPedido,
-                calculo: {valor_distancia, valor_peso, acrescimo, desconto, taxa_extra, valor_final, status_entrega
-                }
-            });
+            res.status(201).json({message: 'Pedido criado e cálculo registrado com sucesso!', id_pedido: idPedido, calculo: {valor_distancia, valor_peso, acrescimo, desconto, taxa_extra, valor_final, status_entrega}});
 
         } catch (error) {
             console.error(error);
@@ -99,4 +90,4 @@ const pedidosController = {
 
 };
 
-module.exports = { pedidosController };
+module.exports = {pedidosController} ;

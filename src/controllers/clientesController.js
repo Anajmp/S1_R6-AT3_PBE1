@@ -12,10 +12,7 @@ const clientesController = {
             res.status(200).json({ message: 'Clientes encontrados', data: resultado });
         } catch (error) {
             console.error(error);
-            res.status(500).json({
-                message: 'Erro interno no servidor.',
-                errorMessage: error.message
-            });
+            res.status(500).json({message: 'Erro interno no servidor.',errorMessage: error.message});
         }
     },
 
@@ -43,7 +40,6 @@ const clientesController = {
             const { nome_completo, cpf, telefone, email, endereco_completo } = req.body;
 
             if (!nome_completo || nome_completo.length < 3 || !cpf || cpf.length < 11 || !telefone || !email || !endereco_completo) {
-
                 return res.status(400).json({ message: 'Dados inválidos para cadastro.' });
             }
 
@@ -51,26 +47,17 @@ const clientesController = {
             if (existeCPF.length === 1) {
                 return res.status(409).json({ message: 'CPF já esta cadastrado.' });
             }
-
-            const resultado = await clientesModel.inserirCliente(
-                nome_completo, cpf, telefone, email, endereco_completo
-            );
+            const resultado = await clientesModel.inserirCliente(nome_completo, cpf, telefone, email, endereco_completo);
 
             if (resultado.affectedRows === 1 && resultado.insertId != 0) {
-                res.status(201).json({
-                    message: 'Cliente cadastrado com sucesso',
-                    result: resultado
-                });
+                res.status(201).json({message: 'Cliente cadastrado com sucesso',result: resultado});
             } else {
                 throw new Error('Erro ao inserir cliente.');
             }
 
         } catch (error) {
             console.error(error);
-            res.status(500).json({
-                message: 'Erro interno no servidor.',
-                errorMessage: error.message
-            });
+            res.status(500).json({message: 'Erro interno no servidor.',errorMessage: error.message});
         }
     },
 
@@ -94,18 +81,12 @@ const clientesController = {
             const novoEmail = email ?? clienteAtual[0].email;
             const novoEndereco = endereco_completo ?? clienteAtual[0].endereco_completo;
 
-            const resultado = await clientesModel.alterarCliente(
-                id, novoNome, novoCPF, novoTelefone, novoEmail, novoEndereco
-            );
-
+            const resultado = await clientesModel.alterarCliente(id, novoNome, novoCPF, novoTelefone, novoEmail, novoEndereco);
             if (resultado.changedRows === 0) {
                 throw new Error('Nenhuma alteração realizada.');
             }
 
-            res.status(200).json({
-                message: 'Cliente atualizado com sucesso.',
-                data: resultado
-            });
+            res.status(200).json({message: 'Cliente atualizado com sucesso.',data: resultado});
 
         } catch (error) {
             console.error(error);
@@ -129,10 +110,7 @@ const clientesController = {
             const resultado = await clientesModel.deleteCliente(id);
 
             if (resultado.affectedRows === 1) {
-                res.status(200).json({
-                    message: 'Cliente removido com sucesso.',
-                    data: resultado
-                });
+                res.status(200).json({message: 'Cliente removido com sucesso.',data: resultado});
             } else {
                 throw new Error('Falha ao excluir cliente.');
             }

@@ -1,0 +1,414 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Logistica
+meta:
+  id: wrk_f490fb079478446b9e11249a4e817931
+  created: 1763989235299
+  modified: 1763989235299
+  description: ""
+collection:
+  - name: Clientes
+    meta:
+      id: fld_091a8e940d454c238c5c2c2bfce950a5
+      created: 1763999665611
+      modified: 1763999665611
+      sortKey: -1763999665611
+      description: ""
+    children:
+      - url: localhost:8081/clientes/1
+        name: Buscar por ID
+        meta:
+          id: req_2e67169c9d49407eb2e1138043402930
+          created: 1763999670238
+          modified: 1764000247267
+          isPrivate: false
+          description: ""
+          sortKey: -1763999670238
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/clientes
+        name: Buscar
+        meta:
+          id: req_9b1797dbb49842768655d754d5bfb1e8
+          created: 1763999812986
+          modified: 1764000227110
+          isPrivate: false
+          description: ""
+          sortKey: -1763999812986
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/clientes
+        name: Incluir
+        meta:
+          id: req_ba48e309538041c7a964c6caeea6f73c
+          created: 1763999827330
+          modified: 1764000209021
+          isPrivate: false
+          description: ""
+          sortKey: -1763999827330
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome_completo":"Ana Julia",
+            	"cpf":"45727362865", 
+            	"telefone":"19999620700",
+            	"email":"anajmp11@gmail.com",
+            	"endereco_completo": "Villa Flora Sumaré" 
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/clientes/1
+        name: Atualizar
+        meta:
+          id: req_6d7cb6125596429184a744297be07924
+          created: 1763999834926
+          modified: 1764000543544
+          isPrivate: false
+          description: ""
+          sortKey: -1763999834926
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome_completo":"Ana Juliaaa",
+            	"cpf":"45727362865", 
+            	"telefone":"19999620700",
+            	"email":"anajmp11@gmail.com",
+            	"endereco_completo": "Villa Flores Sumaré" 
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/clientes/1
+        name: Delete
+        meta:
+          id: req_292a54b939644c5ab223b610be1e1ed8
+          created: 1763999845615
+          modified: 1764000618753
+          isPrivate: false
+          description: ""
+          sortKey: -1763999845615
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Pedidos
+    meta:
+      id: fld_be8cadeb37ec47058750d5f79c891b22
+      created: 1764010307841
+      modified: 1764010307841
+      sortKey: -1764010307841
+      description: ""
+    children:
+      - url: ""
+        name: New Request
+        meta:
+          id: req_8029dc3f66504be4a60f6d80030d7bb7
+          created: 1764010311887
+          modified: 1764010311887
+          isPrivate: false
+          description: ""
+          sortKey: -1764010311887
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos
+        name: New Request
+        meta:
+          id: req_a1914e6ec7c04a2aba043da54f5c7734
+          created: 1764010332673
+          modified: 1764010489227
+          isPrivate: false
+          description: ""
+          sortKey: -1764010332673
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/pedidos
+        name: New Request
+        meta:
+          id: req_76a1797ed2fa4047ba203099ca366cbc
+          created: 1764010404435
+          modified: 1764010899149
+          isPrivate: false
+          description: ""
+          sortKey: -1764010404435
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id_cliente_fk": "2", 
+            	"data_pedido": "2025-11-20", 
+            	"tipo_entrega": "urgente", 
+            	"distancia_km": 200, 
+            	"peso_kg": 60,
+            	"valor_base_km": 20,
+            	"valor_base_kg": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Entregas
+    meta:
+      id: fld_f0676a34001742f8a7285fccbb5e179b
+      created: 1764586752355
+      modified: 1764586752355
+      sortKey: -1764586752355
+      description: ""
+    children:
+      - url: localhost:8081/entregas
+        name: Buscar Todas
+        meta:
+          id: req_2800664e8bc34906951ba9c63bf8236e
+          created: 1764586780199
+          modified: 1764588470357
+          isPrivate: false
+          description: ""
+          sortKey: -1764586780199
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/entregas
+        name: Incluir
+        meta:
+          id: req_a0ae0148833e4d4793491e7c054b89d5
+          created: 1764586810795
+          modified: 1764588227443
+          isPrivate: false
+          description: ""
+          sortKey: -1764586814914
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "valor_distancia":20,
+            "valor_peso":2,
+            "acrescimo": 1,
+            "desconto": 1,
+            "taxa_extra": 1,
+            "valor_final": 1,
+            "status_entrega": "calculado" ,
+            "id_pedido_fk": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/entregas/1
+        name: Buscar por ID
+        meta:
+          id: req_9229db6ee63c4184a242fde01cdccf78
+          created: 1764586814813
+          modified: 1764588450997
+          isPrivate: false
+          description: ""
+          sortKey: -1764586814814
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/entregas/1
+        name: Atualizar
+        meta:
+          id: req_43fff188637f48dfa700f36e0a4431ac
+          created: 1764586879297
+          modified: 1764588538501
+          isPrivate: false
+          description: ""
+          sortKey: -1764586879297
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "valor_distancia":200,
+            "valor_peso":21,
+            "acrescimo": 120,
+            "desconto": 10,
+            "taxa_extra": 32,
+            "valor_final": 100,
+            "status_entrega": "calculado" ,
+            "id_pedido_fk": 2
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/entregas/1
+        name: Apagar
+        meta:
+          id: req_e077afee76f644f48a5b9cb1290a18ef
+          created: 1764586888935
+          modified: 1764588564355
+          isPrivate: false
+          description: ""
+          sortKey: -1764586888935
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b6cdc92800a8acca65b7d4c7cc86222aef9a6ce0
+    created: 1763989235321
+    modified: 1763989235321
+environments:
+  name: Base Environment
+  meta:
+    id: env_b6cdc92800a8acca65b7d4c7cc86222aef9a6ce0
+    created: 1763989235312
+    modified: 1763989235312
+    isPrivate: false
