@@ -15,12 +15,12 @@ collection:
       sortKey: -1763999665611
       description: ""
     children:
-      - url: localhost:8081/clientes/1
+      - url: localhost:8081/clientes/2
         name: Buscar por ID
         meta:
           id: req_2e67169c9d49407eb2e1138043402930
           created: 1763999670238
-          modified: 1764000247267
+          modified: 1764611163485
           isPrivate: false
           description: ""
           sortKey: -1763999670238
@@ -66,7 +66,7 @@ collection:
         meta:
           id: req_ba48e309538041c7a964c6caeea6f73c
           created: 1763999827330
-          modified: 1764000209021
+          modified: 1764610890028
           isPrivate: false
           description: ""
           sortKey: -1763999827330
@@ -75,11 +75,16 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"nome_completo":"Ana Julia",
-            	"cpf":"45727362865", 
-            	"telefone":"19999620700",
-            	"email":"anajmp11@gmail.com",
-            	"endereco_completo": "Villa Flora Sumaré" 
+            	"nome_completo":"Ana Julit",
+            	"cpf":"45727368865", 
+            	"telefone":"19999620500",
+            	"email":"anaaamp11@gmail.com",
+              "numero_casa": "A42",
+            	"bairro_cliente": "Villa FLora", 
+            	"cidade_cliente":"Sumaré", 
+            	"estado_sigla_cliente":"SP",
+            	"cep_cliente":"13175658", 
+            	"logradouro": "Avenida Ipê Roxo"
             }
         headers:
           - name: Content-Type
@@ -96,12 +101,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: localhost:8081/clientes/1
+      - url: localhost:8081/clientes/2
         name: Atualizar
         meta:
           id: req_6d7cb6125596429184a744297be07924
           created: 1763999834926
-          modified: 1764000543544
+          modified: 1764611172618
           isPrivate: false
           description: ""
           sortKey: -1763999834926
@@ -110,11 +115,16 @@ collection:
           mimeType: application/json
           text: |-
             {
-            	"nome_completo":"Ana Juliaaa",
-            	"cpf":"45727362865", 
-            	"telefone":"19999620700",
-            	"email":"anajmp11@gmail.com",
-            	"endereco_completo": "Villa Flores Sumaré" 
+            	"nome_completo":"Ana Julit",
+            	"cpf":"45727367865", 
+            	"telefone":"19299620500",
+            	"email":"anaamp11@gmail.com",
+              "numero_casa": "A42",
+            	"bairro_cliente": "Villa FLora", 
+            	"cidade_cliente":"Sumaré", 
+            	"estado_sigla_cliente":"SP",
+            	"cep_cliente":"13175658", 
+            	"logradouro": "Avenida Ipê Roxo"
             }
         headers:
           - name: Content-Type
@@ -131,12 +141,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: localhost:8081/clientes/1
+      - url: localhost:8081/clientes/2
         name: Delete
         meta:
           id: req_292a54b939644c5ab223b610be1e1ed8
           created: 1763999845615
-          modified: 1764000618753
+          modified: 1764614581901
           isPrivate: false
           description: ""
           sortKey: -1763999845615
@@ -213,7 +223,7 @@ collection:
         meta:
           id: req_76a1797ed2fa4047ba203099ca366cbc
           created: 1764010404435
-          modified: 1764592334045
+          modified: 1764612636403
           isPrivate: false
           description: ""
           sortKey: -1764010404435
@@ -225,10 +235,10 @@ collection:
             	"id_cliente_fk": "2", 
             	"data_pedido": "2025-11-20", 
             	"tipo_entrega": "urgente", 
-            	"distancia_km": 200, 
-            	"peso_kg": 60,
-            	"valor_base_km": 20,
-            	"valor_base_kg": 10
+            	"distancia_km": 100, 
+            	"peso_kg": 10,
+            	"valor_base_km": 2,
+            	"valor_base_kg": 1
             }
         headers:
           - name: Content-Type
@@ -281,72 +291,11 @@ collection:
         meta:
           id: req_a0ae0148833e4d4793491e7c054b89d5
           created: 1764586810795
-          modified: 1764588227443
+          modified: 1764612843447
           isPrivate: false
           description: ""
           sortKey: -1764586814914
         method: POST
-        body:
-          mimeType: application/json
-          text: |-
-            {
-            "valor_distancia":20,
-            "valor_peso":2,
-            "acrescimo": 1,
-            "desconto": 1,
-            "taxa_extra": 1,
-            "valor_final": 1,
-            "status_entrega": "calculado" ,
-            "id_pedido_fk": 1
-            }
-        headers:
-          - name: Content-Type
-            value: application/json
-          - name: User-Agent
-            value: insomnia/12.1.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: localhost:8081/entregas/1
-        name: Buscar por ID
-        meta:
-          id: req_9229db6ee63c4184a242fde01cdccf78
-          created: 1764586814813
-          modified: 1764588450997
-          isPrivate: false
-          description: ""
-          sortKey: -1764586814814
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/12.1.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: localhost:8081/entregas/1
-        name: Atualizar
-        meta:
-          id: req_43fff188637f48dfa700f36e0a4431ac
-          created: 1764586879297
-          modified: 1764588538501
-          isPrivate: false
-          description: ""
-          sortKey: -1764586879297
-        method: PUT
         body:
           mimeType: application/json
           text: |-
@@ -358,7 +307,7 @@ collection:
             "taxa_extra": 32,
             "valor_final": 100,
             "status_entrega": "calculado" ,
-            "id_pedido_fk": 2
+            "id_pedido_fk": 4
 
             }
         headers:
@@ -376,12 +325,74 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: localhost:8081/entregas
+      - url: localhost:8081/entregas/6
+        name: Buscar por ID
+        meta:
+          id: req_9229db6ee63c4184a242fde01cdccf78
+          created: 1764586814813
+          modified: 1764612904528
+          isPrivate: false
+          description: ""
+          sortKey: -1764586814814
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/entregas/7
+        name: Atualizar
+        meta:
+          id: req_43fff188637f48dfa700f36e0a4431ac
+          created: 1764586879297
+          modified: 1764612866977
+          isPrivate: false
+          description: ""
+          sortKey: -1764586879297
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            "valor_distancia":200,
+            "valor_peso":21,
+            "acrescimo": 120,
+            "desconto": 1,
+            "taxa_extra": 32,
+            "valor_final": 100,
+            "status_entrega": "calculado" ,
+            "id_pedido_fk": 7
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.1.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/entregas/7
         name: Apagar
         meta:
           id: req_e077afee76f644f48a5b9cb1290a18ef
           created: 1764586888935
-          modified: 1764589798110
+          modified: 1764612879223
           isPrivate: false
           description: ""
           sortKey: -1764586888935

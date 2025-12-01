@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 const clienteRoutes = require('./clientesRouter');
-router.use('/clientes', clienteRoutes);
+router.use('/', clienteRoutes);
 const pedidosRoutes = require('./pedidosRouter');
-router.use('/pedidos', pedidosRoutes);
+router.use('/', pedidosRoutes);
 const entregasRoutes = require('./entregasRouter');
-router.use('/entregas', entregasRoutes);
+router.use('/', entregasRoutes);
 
 module.exports = router;
