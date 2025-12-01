@@ -162,12 +162,12 @@ collection:
       sortKey: -1764010307841
       description: ""
     children:
-      - url: ""
-        name: New Request
+      - url: localhost:8081/pedidos/1
+        name: Buscar por ID
         meta:
           id: req_8029dc3f66504be4a60f6d80030d7bb7
           created: 1764010311887
-          modified: 1764010311887
+          modified: 1764592251066
           isPrivate: false
           description: ""
           sortKey: -1764010311887
@@ -186,11 +186,11 @@ collection:
             store: true
           rebuildPath: true
       - url: localhost:8081/pedidos
-        name: New Request
+        name: Listar Pedidos
         meta:
           id: req_a1914e6ec7c04a2aba043da54f5c7734
           created: 1764010332673
-          modified: 1764010489227
+          modified: 1764592222654
           isPrivate: false
           description: ""
           sortKey: -1764010332673
@@ -209,11 +209,11 @@ collection:
             store: true
           rebuildPath: true
       - url: localhost:8081/pedidos
-        name: New Request
+        name: Criar
         meta:
           id: req_76a1797ed2fa4047ba203099ca366cbc
           created: 1764010404435
-          modified: 1764010899149
+          modified: 1764592334045
           isPrivate: false
           description: ""
           sortKey: -1764010404435
@@ -376,12 +376,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: localhost:8081/entregas/1
+      - url: localhost:8081/entregas
         name: Apagar
         meta:
           id: req_e077afee76f644f48a5b9cb1290a18ef
           created: 1764586888935
-          modified: 1764588564355
+          modified: 1764589798110
           isPrivate: false
           description: ""
           sortKey: -1764586888935
