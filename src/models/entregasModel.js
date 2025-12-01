@@ -21,7 +21,7 @@ const entregasModel = {
     },
 
     inserirEntrega: async (pvalor_distancia,pvalor_peso,pacrescimo,pdesconto,ptaxa_extra,pvalor_final,pstatus,pid_pedido_fk) => {
-        const sql = `INSERT INTO entregas (valor_distancia, valor_peso, acrescimo, desconto, taxa_extra, valor_final, status_entrega, id_pedido_fk VALUES (?, ?, ?, ?, ?, ?, ?, ?);`;
+        const sql = `INSERT INTO entregas(valor_distancia,valor_peso,acrescimo,desconto,taxa_extra,valor_final,status_entrega, id_pedido_fk) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
         const values = [pvalor_distancia, pvalor_peso, pacrescimo,pdesconto, ptaxa_extra, pvalor_final,pstatus, pid_pedido_fk];
         const [rows] = await pool.query(sql, values);
         return rows;
